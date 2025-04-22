@@ -1,2 +1,2 @@
 # EatzyMeal
-Webbutveckling/Webbserver Projekt
+Webbutveckling/Webbserver/Prog2 Projekt
