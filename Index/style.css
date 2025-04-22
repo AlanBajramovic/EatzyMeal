@@ -54,9 +54,6 @@ header .right .btn-cart {
   width: 60px;
 }
 
-main {
-  height: 100vh;
-}
 main .layout-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -121,7 +118,18 @@ footer .center h4 {
   margin-bottom: 5px;
   color: #514F4F;
 }
+footer .right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 120px;
+}
+footer .right .social-icons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
 footer .right img {
-  height: 45px;
-  width: 45px;
+  height: 30px;
+  width: 30px;
 }/*# sourceMappingURL=style.css.map */
