@@ -57,7 +57,7 @@ header {
             font-weight: bold;
 
             // Hover funktion (Ingen styling än)
-            @include hover-btn-login;
+            //@include hover-btn-login;
         }
 
         .btn-cart {
@@ -162,8 +162,8 @@ footer {
     }
 
     img {
-      height: 30px;
-      width: 30px;
+      height: 38px;
+      width: 38px;
     }
   }
 }
