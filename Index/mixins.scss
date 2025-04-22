@@ -1,11 +1,11 @@
 @import 'variabler';
 
 // Hover funktion till .btn-login
-@mixin hover-btn-login {
-    &:hover {
+//@mixin hover-btn-login {
+    //&:hover {
         //background-color: darken($color: $darker-blue);
-    }
-}
+    //}
+//}
 
 // Visar enbart bilden i knappen
 @mixin transparent-picture {
