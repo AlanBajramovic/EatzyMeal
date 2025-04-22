@@ -17,8 +17,8 @@ header {
     margin-bottom: 30px;
 
     .left {
-        padding-left: 20px;
-        padding-top: 20px;
+        margin-left: 20px;
+        margin-top: 20px;
 
         .ham-menu {
             @include transparent-picture;
@@ -28,25 +28,22 @@ header {
     }
     
     .center {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        padding-top: 20px
+      @include centered-element;
+      padding-top: 20px
     };
 
     .right {
         display: flex;               
         justify-content: flex-start;
         gap: 10px;
-        padding-top: 20px;
-        padding-right: 20px;             
+        margin-top: 20px;
+        margin-right: 20px;             
     
         .btn-login {
             // Knappen
             background-color: $darker-blue;
             height: 60px;
             width: 120px;
-            border-radius: 30%;
             border: none;
             border-radius: 9999rem;
             box-shadow: 0 8px 15px rgba(79, 70, 229, 0.3);
@@ -58,6 +55,10 @@ header {
 
             // Hover funktion (Ingen styling än)
             //@include hover-btn-login;
+        }
+
+        .btn-login-mobile {
+          display: none
         }
 
         .btn-cart {
@@ -104,8 +105,11 @@ main {
             width: 100%;
             height: 75%;
             z-index: 0;
-
           }
+        }
+
+        #text-container-mobile {
+          display: none;
         }
       
         .right-grid {
@@ -138,15 +142,17 @@ footer {
   }
 
   .center {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    @include centered-element;
     bottom: 0;
 
-    h4 {
+    h5 {
       margin-bottom: 5px;
       color: $secondary-fontColor;
     }
+  }
+
+  .center-mobile {
+    display: none;
   }
   
   .right {
@@ -164,6 +170,119 @@ footer {
     img {
       height: 38px;
       width: 38px;
+    }
+  }  
+}
+
+// Här börjar layout för mobil (Iphone 14 Pro Max)
+@media (max-width: 430px) {
+  header {
+
+    .left {
+      
+    }
+
+
+    .center {
+
+      img {
+        width: 80px;
+        height: auto;
+      }
+    }
+
+    .right {
+      gap: 0px;
+
+      .btn-login {
+        display: none;
+      }
+
+      .btn-login-mobile {
+        display: inline;
+        width: 60px;
+        height: 60px;
+        @include transparent-picture;
+
+
+        img {
+          width: 45px;
+          height: 45px;
+        }
+      }
+    }
+  }
+
+  main {
+    .layout-grid {
+      display: block;
+
+      #text-container {
+        display: none;
+      }
+
+      #text-container-mobile {
+        display: block;
+        margin-left: 30px;
+
+        h1 {
+          font-size: 2.5rem;
+        }
+
+        #text-top-mobile {
+
+          h1 {
+            line-height: 1.8;
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    .left {
+      margin-left: 40px;
+      margin-top: 20px;
+
+      img {
+        width: 80px;
+        height: auto;
+      }
+    }
+
+    .center-mobile {
+      @include centered-element;
+      bottom: 0;
+      margin-bottom: 0px;
+      display: inline;
+      
+      h5 {
+        color: $secondary-fontColor;
+        margin-bottom: 5px;
+        font-size: 11px;
+      }
+    }
+
+    .center {
+      display: none;
+    }
+
+    .right {
+      margin-right: 40px;
+      margin-bottom: 10px;
+
+      h2 {
+        font-size: 1rem;
+      }
+
+      .social-icons {
+        gap: 10px;
+      }
+
+      img {
+        width: 25px;
+        height: 25px;
+      }
     }
   }
 }

@@ -12,3 +12,9 @@
     background-color: transparent;
     border: none;
 }
+
+@mixin centered-element {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
