@@ -50,6 +50,14 @@ main .login-google .g_id_signin {
     transform: scaleY(1.2); /* !48px hög! */
 }
 
+#google-signin-desktop {
+    display: block;
+}
+
+#google-signin-mobile {
+    display: none;
+}
+
 main .divider {
     display: flex;
     align-items: center;
@@ -101,7 +109,68 @@ main h5 {
     font-size: 0.83rem;
     font-weight: bold;
 }
+
 /* Här börjar layout för mobil (Iphone 14 Pro Max) */
 @media (max-width: 430px) {
+    main .my-container {
+      width: 80%;
+      height: auto;
+      flex-direction: column;
+      padding: 20px;
+      border-radius: 20px;
+    }
+  
+    main .inside {
+      width: 100%;
+      height: auto;
+      margin: 0;
+    }
+  
+    main img {
+      height: 40%;
+      width: 100%;
+      object-fit: cover;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      z-index: 0;
+    }
+  
+    main .welcome-text h1 {
+        font-size: 1.5rem;
+        text-align: center;
+      }
+    
+      main .welcome-text p {
+        font-size: 0.9rem;
+        text-align: center;
+    }
 
-}
+    #google-signin-desktop {
+        display: none;
+    }
+
+    #google-signin-mobile {
+        display: block;
+    }
+  
+    main .divider .left,
+    main .divider .right {
+        width: auto;
+    }
+
+    main .divider .left hr,
+    main .divider .right hr {
+      width: 120px;
+    }
+
+    main .divider .center p {
+        font-size: 0.9rem;
+    }
+  
+    main h5 {
+      font-size: 0.75rem;
+      text-align: center;
+    }
+  }
+  

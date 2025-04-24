@@ -40,7 +40,7 @@
         <div class="d-block mx-auto inside">
           <div class="welcome-text">
             <h1>Välkommen!</h1>
-            <p>Logga in eller skapa ett konto för att fortsätta</p>
+            <p>Logga in eller registrera dig för att fortsätta</p>
           </div>
 
           <div class="d-flex justify-content-center login-google">
@@ -53,15 +53,33 @@
               data-auto_prompt="false"
             ></div>
 
+            <!-- Desktop knapp -->
             <div
+              id="google-signin-desktop"
               class="g_id_signin"
               data-type="standard"
               data-shape="rectangular"
               data-text="signin_with"
               data-size="large"
               data-logo_alignment="left"
-              data-width="5000">
-            ></div>
+              data-width="50000"
+            >
+            </div>
+        
+            <!-- Mobil-knapp -->
+            <div
+              id="google-signin-mobile"
+              class="g_id_signin"
+              data-type="standard"
+              data-shape="rectangular"
+              data-text="signin_with"
+              data-size="large"
+              data-logo_alignment="left"
+              data-width="302"
+            >
+            </div>
+
+
           </div>
 
           <div class="d-flex justify-content-between divider">
