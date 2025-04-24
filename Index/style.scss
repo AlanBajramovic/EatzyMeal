@@ -29,7 +29,12 @@ header {
     
     .center {
       @include centered-element;
-      padding-top: 20px
+      padding-top: 20px;
+
+      img {
+        height: auto;
+        width: auto;
+      }
     };
 
     .right {

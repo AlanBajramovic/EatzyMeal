@@ -28,6 +28,10 @@ header .center {
   transform: translateX(-50%);
   padding-top: 20px;
 }
+header .center img {
+  height: auto;
+  width: auto;
+}
 header .right {
   display: flex;
   justify-content: flex-start;
