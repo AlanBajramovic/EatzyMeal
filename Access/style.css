@@ -4,16 +4,20 @@ body {
 
 header a img {
     margin-top: 20px;
+    width: 126px;
+    height: 73px;
 }
 
 main .my-container {
     background-color: #B2FFF1;
     width: 500px;
-    height: 600px;
-    margin-top: 40px;
+    height: 550px;
+    margin-top: 60px;
     border: 1px solid black;
     border-radius: 10%;
     box-shadow: 0 8px 15px rgba(79, 70, 229, 0.3);
+    z-index: 1;
+    position: relative;
 }
 
 main .inside {
@@ -23,7 +27,8 @@ main .inside {
     margin-left: 30px;
 }
 
-main .welcome-text h1, p {
+main .welcome-text h1, 
+main .welcome-text p {
     font-weight: bold;
 }
 
@@ -37,20 +42,54 @@ main .welcome-text p {
 }
 
 main .login-google {
-    margin-bottom: 40px;
-    margin-top: 40px;
+    margin-top: 45px;
 }
 
 main .login-google .g_id_signin {
     transform: scaleY(1.2); /* !48px hög! */
 }
 
+main .divider {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
 main .divider .center {
     height: 40px;
+    display: flex;
+    align-items: center;
 }
 
 main .divider .center p {
     color: #514F4F;
     font-size: 1.1rem;
     font-weight: bold;
+    margin: 0 !important;
+}
+
+main .divider .left, .right  hr {
+    width: 150px;
+}
+
+main .buttons .btn-login, .btn-register {
+    height: 48px;
+    width: 100%;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    background-color: white;
+    color: #3c4043;
+    font-weight: 500;
+}
+
+main img {
+    display: inline;
+    z-index: 0;
+    position: absolute;
+    object-fit: cover;
+    height: 650px;
+    width: auto;
+    bottom: 0;
+    left: 0;
 }
