@@ -36,11 +36,21 @@ main .welcome-text p {
     font-size: 1.1rem;
 }
 
-.login-google {
+main .login-google {
     margin-bottom: 40px;
     margin-top: 40px;
 }
 
-.login-google .g_id_signin {
+main .login-google .g_id_signin {
     transform: scaleY(1.2); /* !48px hög! */
-  }
+}
+
+main .divider .center {
+    height: 40px;
+}
+
+main .divider .center p {
+    color: #514F4F;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
