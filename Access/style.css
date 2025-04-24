@@ -12,7 +12,8 @@ main .my-container {
     height: 600px;
     margin-top: 40px;
     border: 1px solid black;
-    border-radius: 5%;
+    border-radius: 10%;
+    box-shadow: 0 8px 15px rgba(79, 70, 229, 0.3);
 }
 
 main .inside {
@@ -35,5 +36,11 @@ main .welcome-text p {
     font-size: 1.1rem;
 }
 
+.login-google {
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
 
-
+.login-google .g_id_signin {
+    transform: scaleY(1.2); /* !48px hög! */
+  }
