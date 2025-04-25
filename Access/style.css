@@ -108,6 +108,7 @@ main h5 {
     color: #514F4F;
     font-size: 0.83rem;
     font-weight: bold;
+    font-family: 'Inter', sans-serif;
 }
 
 /* Här börjar layout för mobil (Iphone 14 Pro Max) */
@@ -152,6 +153,11 @@ main h5 {
 
     #google-signin-mobile {
         display: block;
+    }
+
+    main .divider {
+        margin-top: 15px;
+        margin-bottom: 15px;
     }
   
     main .divider .left,
