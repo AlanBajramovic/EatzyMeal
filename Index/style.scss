@@ -184,7 +184,7 @@ footer {
   header {
 
     .left {
-      
+      margin-left: 10px;
     }
 
 
@@ -198,6 +198,7 @@ footer {
 
     .right {
       gap: 0px;
+      margin-right: 10px;
 
       .btn-login {
         display: none;

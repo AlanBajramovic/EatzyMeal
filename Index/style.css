@@ -147,12 +147,16 @@ footer .right img {
 }
 
 @media (max-width: 430px) {
+  header .left {
+    margin-left: 10px;
+  }
   header .center img {
     width: 80px;
     height: auto;
   }
   header .right {
     gap: 0px;
+    margin-right: 10px;
   }
   header .right .btn-login {
     display: none;
