@@ -10,10 +10,11 @@ header .header-logo img {
   margin-top: 20px;
   width: 126px;
   height: 73px;
+  position: relative;
 }
 
 main .my-container {
-  background-color: #B2FFF1;
+  background-color: #b2fff1;
   width: 500px;
   height: 550px;
   margin: 100px auto;
@@ -30,16 +31,34 @@ main .inside {
   height: 500px;
   margin-top: 50px;
 }
-main .welcome-text h1 {
+main .inside .welcome-text h1 {
   font-size: 2rem;
   font-weight: bold;
 }
-main .welcome-text p {
+main .inside .welcome-text p {
   font-size: 1.1rem;
-  color: #514F4F;
+  color: #514f4f;
   font-weight: bold;
 }
-main img {
+main .login-input form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+main .login-input form input, main .login-input form button {
+  height: 48px;
+  border-radius: 4px;
+  border: 1px solid #dadce0;
+  color: #514F4F;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+main .login-input form button {
+  background-color: #95C9BF;
+  border: none;
+}
+
+img {
   position: absolute;
   z-index: 0;
   -o-object-fit: cover;
@@ -50,11 +69,12 @@ main img {
   left: 0;
   display: inline;
 }
-main h5 {
+
+h5 {
   margin-bottom: 5px;
   font-size: 0.83rem;
   font-weight: bold;
-  color: #514F4F;
+  color: #514f4f;
   font-family: "Inter", sans-serif;
   position: absolute;
   bottom: 0;
