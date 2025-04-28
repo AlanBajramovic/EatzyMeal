@@ -12,16 +12,23 @@ body {
     position: relative;
   }
 
+  .bild {
+    width: 60%;
+    background-image: url('../bilder/foodsBackground2.png');
+    background-size: cover;
+    background-position: right;
+    background-repeat: none;
+}
   header .right .btn-login {
     background-color: #B2FFF1;
-    height: 60px;
+    height: 90px;
     width: 120px;
     border-radius: 30%;
     border: none;
     border-radius: 9999rem;
     box-shadow: 0 8px 15px rgba(79, 70, 229, 0.3);
     font-size: 1.4rem;
-    color: #514F4F;
+    color: #445e5f;
     font-weight: bold;
   }
   
@@ -32,7 +39,7 @@ body {
   
   .logo {
     position: absolute;
-    left: 50%;
+    left: 30%;
     transform: translateX(-50%);
     margin: 0;
     font-size: 32px;
@@ -51,16 +58,27 @@ body {
   .header-buttons button {
     background-color: #ffffff;
     border: none;
-    padding: 10px 20px;
+    padding: 15px 20px;
     border-radius: 20px;
     cursor: pointer;
   }
   
-  .cart-icon {
-    font-size: 26px;
+  .btn-cart{
     cursor: pointer;
+    justify-content: flex-end;
+    height: max-content;
+    width: max-content;
+    position: right;
   }
-  
+
+  .ham-menu{
+    cursor: pointer;
+    justify-content: flex-start;
+    height: max-content;
+    width: max-content;
+    position: left;
+  }
+   
   .main-section {
     display: flex;
     flex-wrap: wrap;
@@ -112,28 +130,51 @@ body {
     border-top-left-radius: 200px;
   }
   
+  .bild{
+    justify-content: flex-end;display: flex;
+
+  }
+
   footer {
-    background-color: #a6d7d0;
-    padding: 15px 20px;
+    background-color: #95C9BF;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
+    position: relative;
   }
-  
-  footer p {
-    margin: 0;
+  footer .left {
+    margin-left: 120px;
+    margin-top: 20px;
   }
-  
-  footer .social {
+  footer .left img {
+    width: 150px;
+    height: 90px;
+  }
+  footer .center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+  }
+  footer .center h5 {
+    margin-bottom: 5px;
+    color: #514F4F;
+  }
+  footer .center-mobile {
+    display: none;
+  }
+  footer .right {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 10px;
+    margin-right: 120px;
   }
-  
-  footer .social img {
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
+  footer .right .social-icons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  footer .right img {
+    height: 38px;
+    width: 38px;
   }
   
