@@ -1,5 +1,6 @@
 body {
     font-family: 'Inter', sans-serif !important;
+    margin: 0;
   }
   
   header .header-logo {
@@ -31,21 +32,65 @@ body {
     .inside {
       width: 400px;
       height: 500px;
-      margin: 50px 0 0 30px;
+      margin: 50px 0 0 0px;
+
     }
   
     .welcome-text {
       h1 {
         font-size: 2rem;
         font-weight: bold;
+        margin-bottom: 8px;
+        margin-top: 2px;
       }
   
       p {
         font-size: 1.1rem;
         color: #514F4F;
         font-weight: bold;
+        margin-top: 0;
       }
     }
+
+    #back-space {
+      height: 40px;
+      width: auto;
+      position: relative;
+    }
+
+    .register-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    
+      .name-fields {
+        display: flex;
+        gap: 20px;
+        width: 100%;
+
+        input {
+          flex: 1;
+          min-width: 0;
+        }
+      }
+    
+      button {
+        background-color: #95C9BF;
+        border: none;
+        margin-top: 20px;
+      }
+
+      input, button {
+        height: 52px;
+        border-radius: 4px;
+        border: 1px solid #dadce0;
+        color: #514F4F;
+        font-size: 1.1rem;
+        font-weight: bold;
+      }
+    }
+    
+    
   
     img {
       position: absolute;

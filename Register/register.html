@@ -21,12 +21,25 @@
 
         <div class="my-container">
             <div class="inside">
+                <a href="/Access/access.html">
+                    <img src="/Bilder/Universial/backSpace.png" alt="" id="back-space">
+                </a>
                 <div class="welcome-text">
-                    <h1>Välkommen tillbaka!</h1>
-                    <p>Logga in genom att skriva din mail och lösenord</p>
+                    <h1>Då börjar vi!</h1>
+                    <p>Låt oss skapa ditt EatzyMeal-konto</p>
                 </div>
 
-                
+                <form class="register-form" action="/register" method="POST">
+                    <div class="name-fields">
+                      <input id="fname" type="text" name="firstname" placeholder="Förnamn" required>
+                      <input id="lname" type="text" name="lastname" placeholder="Efternamn" required>
+                    </div>
+                    <input type="email" name="email" placeholder="Mail" required>
+                    <input type="password" name="password" placeholder="Lösenord" required>
+                    <button type="submit">Skapa konto</button>
+                  </form>
+                  
+    
             </div>
         </div>
   
