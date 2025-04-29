@@ -34,11 +34,19 @@ main .inside {
 main .inside .welcome-text h1 {
   font-size: 2rem;
   font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 8px;
 }
 main .inside .welcome-text p {
   font-size: 1.1rem;
   color: #514f4f;
   font-weight: bold;
+  margin-top: 0;
+}
+main .inside #back-space {
+  height: 40px;
+  width: auto;
+  position: relative;
 }
 main .login-input form {
   display: flex;

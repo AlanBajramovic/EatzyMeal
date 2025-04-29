@@ -38,13 +38,22 @@ main {
       h1 {
         font-size: 2rem;
         font-weight: bold;
+        margin-top: 5px;
+        margin-bottom: 8px;
       }
 
       p {
         font-size: 1.1rem;
         color: #514f4f;
         font-weight: bold;
+        margin-top: 0;
       }
+    }
+
+    #back-space {
+      height: 40px;
+      width: auto;
+      position: relative;
     }
   }
 
