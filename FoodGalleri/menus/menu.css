@@ -30,6 +30,8 @@ img {
 
 .itemLayout {
   display: block;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding-top: 25px;
 }
 
 h3 {
