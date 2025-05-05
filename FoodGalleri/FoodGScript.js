@@ -21,3 +21,7 @@ function goToGrill() {
 function goToSpagetthi() {
     window.location.href = 'menus/spagetthi/spagetmenu.html';
   }
+
+function goToGalleri(){
+    window.location.href = '../../galleri.html'
+}
