@@ -1,180 +1,126 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-  }
-  
-  header {
-    background-color: #a6d7d0;
-    padding: 15px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-  }
-
-  .bild {
-    width: 60%;
-    background-image: url('../bilder/foodsBackground2.png');
-    background-size: cover;
-    background-position: right;
-    background-repeat: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-  header .right .btn-login {
-    background-color: #B2FFF1;
-    height: 90px;
-    width: 120px;
-    border-radius: 30%;
-    border: none;
-    border-radius: 9999rem;
-    box-shadow: 0 8px 15px rgba(79, 70, 229, 0.3);
-    font-size: 1.4rem;
-    color: #445e5f;
-    font-weight: bold;
-  }
-  
-  .menu-icon {
-    font-size: 30px;
-    cursor: pointer;
-  }
-  
-  .logo {
-    position: absolute;
-    left: 30%;
-    transform: translateX(-50%);
-    margin: 0;
-    font-size: 32px;
-  }
-  
-  .logo span {
-    font-weight: bold;
-  }
-  
-  .header-buttons {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .header-buttons button {
-    background-color: #ffffff;
-    border: none;
-    padding: 15px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-  }
-  
-  .btn-cart{
-    cursor: pointer;
-    justify-content: flex-end;
-    height: max-content;
-    width: max-content;
-    position: right;
-  }
 
-  .ham-menu{
-    cursor: pointer;
-    justify-content: flex-start;
-    height: max-content;
-    width: max-content;
-    position: left;
-  }
-   
-  .main-section {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .left-side {
-    flex: 1;
-    padding: 40px;
-    max-width: 600px;
-  }
-  
-  .left-side h2 {
-    font-size: 40px;
-    margin: 0;
-  }
-  
-  .left-side h3 {
-    font-size: 24px;
-    margin: 20px 0;
-  }
-  
-  .info {
-    margin: 20px 0;
-  }
-  
-  .info h4 {
-    margin: 0 0 5px 0;
-  }
-  
-  .stars {
-    font-size: 24px;
-    margin-top: 10px;
-  }
-  
-  .right-side {
-    flex: 1;
-    background-color: #f8f8f8;
-    border-top-left-radius: 200px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 500px;
-  }
-  
-  .right-side img {
-    max-width: 100%;
-    height: auto;
-    border-top-left-radius: 200px;
-  }
-  
-  .bild{
-    justify-content: flex-end;display: flex;
+body, html {
+  font-family: Arial, sans-serif;
+  height: 100%;
+}
 
-  }
+header, footer {
+  background-color: #a4d6d1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
 
-  footer {
+.logo, .footer-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1;
+  align-items: center;
+}
+
+.right .btn-login {
+  background-color: #B2FFF1;
+  height: 60px;
+  width: 110px;
+  border: none;
+  border-radius: 9999rem;
+  box-shadow: 0 8px 15px rgba(79, 70, 229, 0.3);
+  font-size: 1.4rem;
+  color: #514F4F;
+  font-weight: bold;
+}
+
+.about-section {
+  display: flex;
+  min-height: calc(100vh - 160px);
+}
+
+.text-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 3rem;
+  z-index: 1;
+}
+
+.text-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.text-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.info-block {
+  margin-bottom: 1.5rem;
+}
+
+.info-block h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.stars h3 {
+  margin-bottom: 0.5rem;
+}
+
+.image-side {
+  flex: 1;
+  background-image: url('../bilder/foodsBackground2.png');
+  background-size: cover;
+  background-position: center;
+  clip-path: ellipse(70% 100% at 100% 50%);
+}
+
+footer {
     background-color: #95C9BF;
     display: flex;
     justify-content: space-between;
     position: relative;
-  }
-  footer .left {
+}
+footer .left {
     margin-left: 120px;
     margin-top: 20px;
-  }
-  footer .left img {
+}
+footer .left img {
     width: 150px;
     height: 90px;
-  }
-  footer .center {
+}
+footer .center {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     bottom: 0;
-  }
-  footer .center h5 {
+}
+footer .center h5 {
     margin-bottom: 5px;
     color: #514F4F;
-  }
-  footer .center-mobile {
+}
+footer .center-mobile {
     display: none;
-  }
-  footer .right {
+}
+footer .right {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-right: 120px;
-  }
-  footer .right .social-icons {
+}
+footer .right .social-icons {
     display: flex;
     gap: 20px;
     justify-content: center;
-  }
-  footer .right img {
+}
+footer .right img {
     height: 38px;
     width: 38px;
-  }
+}
   
