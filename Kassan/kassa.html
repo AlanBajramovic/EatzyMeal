@@ -19,19 +19,21 @@
     
       <div id="kassaDiv">
         <div id="Kassaorder">
-        <h1>Kassa</h1>
 
-        <ol>
-            <li>eh</li>
-            <li>eh</li>
-            <li>eh</li>
-            <li>eh</li>
-        </ol>
+        <h1>Din varukorg</h1>
+        <p>Produkt 1 - 199 kr</p>
+        <p>Produkt 2 - 99 kr</p>
+        <p><strong>Total: 298 kr</strong></p> 
 
-        <button>Köp</button>
+        <button onclick="buy()" class="btn btn-outline-light" >Köp</button>
         </div>
       </div>
 
+      <script>
+        function buy(){
+          alert("Din beställning har gått igenom")
+        }
+      </script>
     
 </body>
 </html>
