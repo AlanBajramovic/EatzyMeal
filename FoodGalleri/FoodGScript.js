@@ -25,3 +25,7 @@ function goToSpagetthi() {
 function goToGalleri(){
     window.location.href = '../../galleri.html'
 }
+
+function goToKassa(){
+  window.location.href = '../../../../kassan/kassa.html'
+}
