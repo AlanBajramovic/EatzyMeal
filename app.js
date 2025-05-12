@@ -8,24 +8,19 @@ require('dotenv').config();
 const app = express();
 const PORT = 3000;
 
-// Skapa Supabase-klient
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
 
-// View engine och statiska filer
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use('/login_static', express.static(path.join(__dirname, 'publicLogin')));
 app.use('/register_static', express.static(path.join(__dirname, 'publicRegister')));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Startpunkt → omdirigerar till login
 app.get('/', (req, res) => {
   res.redirect('/login');
 });
 
-// ==========================
-// INLOGGNING
-// ==========================
+// Inloggning
 app.get('/login', (req, res) => {
   res.render('login', { error: null });
 });
@@ -37,7 +32,7 @@ app.post('/login', async (req, res) => {
     .from('users')
     .select('*')
     .eq('email', email)
-    .eq('password_hash', password) // OBS! Hasha i riktig app
+    .eq('password_hash', password)
     .single();
 
   if (error || !data) {
@@ -47,9 +42,7 @@ app.post('/login', async (req, res) => {
   res.send(`Välkommen, ${data.name}!`);
 });
 
-// ==========================
-// REGISTRERING
-// ==========================
+// Registrering
 app.get('/register', (req, res) => {
   res.render('register', { error: null });
 });
@@ -76,8 +69,8 @@ app.post('/register', async (req, res) => {
         name: firstname,
         last_name: lastname,
         email: email,
-        password_hash: password, // OBS! Hasha i riktig app
-        auth: 'user'             // Alla nya konton får rollen 'user'
+        password_hash: password, 
+        auth: 'user'        
       }
     ]);
 
@@ -85,7 +78,6 @@ app.post('/register', async (req, res) => {
     return res.render('register', { error: 'Kunde inte skapa konto. Försök igen.' });
   }
 
-  // Skicka användaren till login efter lyckad registrering
   res.redirect('/login');
 });
 
