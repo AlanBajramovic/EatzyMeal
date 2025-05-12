@@ -14,8 +14,8 @@ const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY
 // View engine och statiska filer
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
-app.use(express.static(path.join(__dirname, 'publicRegister')));
-app.use(express.static(path.join(__dirname, 'publicLogin')));
+app.use('/login_static', express.static(path.join(__dirname, 'publicLogin')));
+app.use('/register_static', express.static(path.join(__dirname, 'publicRegister')));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Startpunkt → omdirigerar till login
