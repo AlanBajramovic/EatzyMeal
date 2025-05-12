@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/register_static/css/style.css">
 </head>
 <body>
+    <!-- Header med logotype -->
     <header>
         <div class="header-logo">
             <a href="/Index/index.html">
@@ -16,7 +17,9 @@
         </div>
     </header>
 
+    <!-- Huvuddelen av sidan -->
     <main>
+        <!-- Bakgrundsbild -->
         <img src="/register_static/Bilder/cyanBackgrounds.png" alt="">
 
         <div class="my-container">
@@ -29,10 +32,12 @@
                     <p>Låt oss skapa ditt EatzyMeal-konto</p>
                 </div>
 
+                <!-- Skriver felmedelandet om inloggning misslyckas -->
                 <% if (error) { %>
                     <p style="color: red;"><%= error %></p>
                 <% } %>
 
+                <!-- Registreringsfältet -->
                 <form class="register-form" action="/register" method="POST">
                     <div class="name-fields">
                       <input id="fname" type="text" name="firstname" placeholder="Förnamn" required>
@@ -42,8 +47,6 @@
                     <input type="password" name="password" placeholder="Lösenord" required>
                     <button type="submit">Skapa konto</button>
                   </form>
-                  
-    
             </div>
         </div>
   

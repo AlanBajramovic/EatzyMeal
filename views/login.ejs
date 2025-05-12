@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/login_static/css/style.css">
 </head>
 <body>
+    <!-- Header med logotype -->
     <header>
         <div class="header-logo">
             <a href="/Index/index.html">
@@ -16,7 +17,9 @@
         </div>
     </header>
 
+    <!-- Huvuddelen av sidan -->
     <main>
+        <!-- Bakgrundsbild -->
         <img src="/login_static/Bilder/cyanBackgrounds.png" alt="">
 
         <div class="my-container">
@@ -30,10 +33,12 @@
                     <p>Logga in genom att skriva din mail och lösenord</p>
                 </div>
 
+                <!-- Skriver felmedelandet om inloggning misslyckas -->
                 <% if (error) { %>
                     <p style="color: red;"><%= error %></p>
                 <% } %>
 
+                <!-- Inloggningsfältet -->
                 <div class="login-input">
                     <form action="/login" method="POST">
                         <input type="email" id="email" name="email" placeholder="Mail" required>

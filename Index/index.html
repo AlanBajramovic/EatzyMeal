@@ -10,6 +10,8 @@
 </head>    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <body>
+
+    <!-- Header -->
     <header>
         <div class="left">
             <button id="menu-toggle" class="ham-menu">
@@ -21,6 +23,7 @@
             <img src="/Bilder/Universial/logoType.png" alt="EatzyMeal logotype">
         </div>
 
+        <!-- Login- och kundvagnsknapp, annan knapp för telefonvy -->
         <div class="right">
             <a href="/Access/access.html">
             <button class="btn-login">Logga in</button>
@@ -34,7 +37,7 @@
         </div>
     </header>
 
-    <!-- Hamburgermeny-->
+    <!-- Hamburgermeny (!UR FUNKTION!) -->
     <nav id="nav-menu" class="hidden">
         <button id="close-menu" class="close-btn">
             <img src="/Bilder/Universial/Hamburgermeny/close.png" alt="Stäng">
@@ -47,7 +50,7 @@
         </ul>
     </nav>
 
-
+    <!-- Huvuddelen av sidan, text och bild -->
     <main>
         <div class="layout-grid">
             <div class="left-grid">
@@ -75,6 +78,7 @@
                 </div>
             </div>
 
+            <!-- För telefonvy -->
             <div id="text-container-mobile">
                 <div id="text-top-mobile">
                     <h1>Snabbt,
@@ -95,6 +99,7 @@
           </div>          
     </main>    
 
+    <!-- Footern -->
     <footer>
         <div class="left">
             <img src="/Bilder/Universial/logoType.png" alt="EatzyMeal logoType">
@@ -116,6 +121,7 @@
         </div>
     </footer>
 
+    <!-- JS-kod för hamburgermeny (!UR FUNKTION!) -->
     <script>
         const toggleBtn = document.getElementById('menu-toggle');
         const navMenu = document.getElementById('nav-menu');
