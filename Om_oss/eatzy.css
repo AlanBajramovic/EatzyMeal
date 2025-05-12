@@ -10,7 +10,7 @@ body, html {
 }
 
 header, footer {
-  background-color: #a4d6d1;
+  background-color: #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
