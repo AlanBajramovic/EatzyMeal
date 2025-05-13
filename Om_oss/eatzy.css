@@ -27,13 +27,27 @@ header, footer {
 .right .btn-login {
   background-color: #B2FFF1;
   height: 60px;
-  width: 110px;
+  width: 120px;
   border: none;
   border-radius: 9999rem;
   box-shadow: 0 8px 15px rgba(79, 70, 229, 0.3);
   font-size: 1.4rem;
   color: #514F4F;
   font-weight: bold;
+}
+
+.btn-cart {
+  background-color: transparent;
+  border: none;
+  height: 60px;
+  width: 60px;
+}
+
+.ham-menu{
+  background-color: transparent;
+  border: none;
+  height: 60px;
+  width: 60px;
 }
 
 .about-section {
@@ -75,7 +89,7 @@ header, footer {
 
 .image-side {
   flex: 1;
-  background-image: url('../bilder/foodsBackground2.png');
+  background-image: url('foodsBackground2.png');
   background-size: cover;
   background-position: center;
   clip-path: ellipse(70% 100% at 100% 50%);
