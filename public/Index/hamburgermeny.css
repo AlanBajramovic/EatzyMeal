@@ -1,0 +1,28 @@
+#nav-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+#nav-menu.show {
+  display: block;
+}
+#nav-menu ul {
+  list-style: none;
+  padding: 0;
+}
+#nav-menu ul li {
+  margin-bottom: 20px;
+}
+#nav-menu ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 18px;
+}/*# sourceMappingURL=hamburgermeny.css.map */
