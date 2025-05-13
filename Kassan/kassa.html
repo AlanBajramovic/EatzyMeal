@@ -23,13 +23,36 @@
         <h1>Din varukorg</h1>
         <p>Produkt 1 - 199 kr</p>
         <p>Produkt 2 - 99 kr</p>
-        <p><strong>Total: 298 kr</strong></p> 
+        <div id="summa">
+        <p><strong>Totalsumma <span style="font-size: x-small;">(inkl. moms) </span></strong></p> 
+        <p><strong> : 298 kr</strong></p>
+        </div>
+
+        <div>
+          <h6>address:</h6>
+          <input type="text">
+
+          <br>
+          <br>
+
+          <h6>Betalnings metod:</h6>
+          <div class="btn" id="paymentButtons">
+          <button type="button" class="btn btn-outline-light m-1 " data-bs-toggle="button" aria-pressed="false"><img class="paymenticons" src="swish.png" alt=""></button>
+          <button class="btn btn-outline-light m-1" data-bs-toggle="button" aria-pressed="false"><img class="paymenticons" src="card.png" alt=""></button>
+          <button class="btn btn-outline-light m-1" data-bs-toggle="button" aria-pressed="false"><img class="paymenticons" src="apple.png" alt=""></button>
+          </div>
+          
+          
+        </div>
+        
+        <br>
 
         <button onclick="buy()" class="btn btn-outline-light" >Köp</button>
         </div>
       </div>
 
       <script src="kassa.js"></script>
+      
     
 </body>
 </html>

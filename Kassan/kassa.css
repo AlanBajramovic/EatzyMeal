@@ -38,4 +38,13 @@ body {
   align-items: center;
   width: 90px;
   height: 60px;
+}
+
+#summa {
+  display: flex;
+}
+
+.paymenticons {
+  width: 30px;
+  height: 30px;
 }/*# sourceMappingURL=kassa.css.map */
