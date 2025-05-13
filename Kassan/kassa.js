@@ -41,5 +41,5 @@ let selectedPayment = null;
     }
 
     // Proceed with purchase
-    alert("Köp genomförd!");
+    alert("Beställningen har genomförts!");
   }
