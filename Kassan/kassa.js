@@ -2,9 +2,6 @@ function goToGalleri(){
     window.location.href = '../../FoodGalleri/galleri.html'
 }
 
-function buy(){
-    alert("Din beställning har gått igenom")
-  }
 
   const buttonGroup = document.getElementById('paymentButtons');
   const buttons = buttonGroup.querySelectorAll('.btn');
@@ -15,3 +12,34 @@ function buy(){
       button.classList.add('active'); // add to clicked one
     });
   });
+
+  
+
+const paymentButtons = document.querySelectorAll(".payment-btn");
+let selectedPayment = null;
+
+  paymentButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      paymentButtons.forEach(btn => btn.classList.remove("selected"));
+      button.classList.add("selected");
+      selectedPayment = button;
+    });
+  });
+
+  // Buy function
+  function buy() {
+    const address = document.getElementById("address").value.trim();
+
+    if (address === "") {
+      alert("Fyll i adressen.");
+      return;
+    }
+
+    if (!selectedPayment) {
+      alert("Välj en betalningsmetod.");
+      return;
+    }
+
+    // Proceed with purchase
+    alert("Köp genomförd!");
+  }
