@@ -91,6 +91,13 @@ app.get('/register', (req, res) => {
 app.post('/register', async (req, res) => {
   const { firstname, lastname, email, password } = req.body;
 
+
+  // Kräver säkrare lösenord
+  const passwordRegex = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
+  if (!passwordRegex.test(password)) {
+    return res.render('register', { error: 'Lösenordet måste vara minst 8 tecken långt, innehålla minst en stor bokstav och minst en siffra.' });
+  }
+
   // Kontrollera om e-post redan finns
   const { data: existingUser } = await supabase
     .from('users')
