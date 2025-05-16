@@ -1,3 +1,7 @@
+function goToHomepage(){
+  window.location.href = '../../../../public/index/index.html'
+}
+
 function goToSushi() {
     window.location.href = 'menus/sushi/sushimenu.html';
   }
