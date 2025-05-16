@@ -2,6 +2,10 @@ function goToGalleri(){
     window.location.href = '../../FoodGalleri/galleri.html'
 }
 
+function goToHomepage(){
+  window.location.href = '../../../../public/index/index.html'
+}
+
 
   const buttonGroup = document.getElementById('paymentButtons');
   const buttons = buttonGroup.querySelectorAll('.btn');
