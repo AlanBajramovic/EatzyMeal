@@ -53,3 +53,5 @@ document.querySelectorAll('.addToCart').forEach(button => {
     }, 1000);
   });
 });
+
+
