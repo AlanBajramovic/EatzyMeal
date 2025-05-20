@@ -68,7 +68,7 @@ main .layout-grid {
 main .layout-grid .left-grid {
   position: relative;
 }
-main .layout-grid .left-grid #text-container {
+main .layout-grid .left-grid #text-container, main .layout-grid .left-grid #btn-food {
   position: relative;
   z-index: 1;
 }
@@ -80,8 +80,16 @@ main .layout-grid .left-grid #text-middle {
   padding-top: 1px;
   padding-bottom: 1px;
 }
-main .layout-grid .left-grid #text-top, main .layout-grid .left-grid #text-middle, main .layout-grid .left-grid #text-bottom {
+main .layout-grid .left-grid #text-top, main .layout-grid .left-grid #text-middle, main .layout-grid .left-grid #text-bottom, main .layout-grid .left-grid #btn-food {
   margin-left: 120px;
+}
+main .layout-grid .left-grid #text-middle h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+main .layout-grid .left-grid #btn-food {
+  height: 100px;
+  width: 100px;
 }
 main .layout-grid .left-grid img {
   position: absolute;

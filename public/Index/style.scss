@@ -83,7 +83,7 @@ main {
         .left-grid {
           position: relative;
 
-          #text-container {
+          #text-container, #btn-food {
             position: relative;
             z-index: 1; 
           }
@@ -98,9 +98,19 @@ main {
             padding-bottom: 1px;
           }
 
-          #text-top, #text-middle, #text-bottom {
+          #text-top, #text-middle, #text-bottom, #btn-food {
             margin-left: 120px;
 
+          }
+
+          #text-middle h1 {
+            margin-top: 0;
+            margin-bottom: 0;
+          }
+
+          #btn-food {
+            height: 100px;
+            width: 100px;
           }
 
           img {
