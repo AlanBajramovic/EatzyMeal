@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kassa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="kassa.css">
+</head>
+<body>
+
+  <!-- topbar -->
+
+    <div class="topbar d-flex justify-content-between align-items-center px-3 py-2">
+        <button class="btn btn-light"><img id="shopcartimg" src="/FoodGalleri/images/hamburgerMenu.png" alt="hamMenu"></button>
+        <img class="logo" onclick="goToHomepage()" src="/FoodGalleri/eatzyLogo.png" alt="" style="width: 400px; height: 87px; object-fit: cover;">
+        <button onclick="goToGalleri()" class="btn btn-light"><img id="shopcartimg" src="cutlery.png" width="50px" height="50px" alt="Add food"></button>
+      </div>
+
+      <!-- kassans layout -->
+      <div id="kassaDiv">
+        <div id="Kassaorder">
+
+        <h1 style="text-decoration: underline;">Din varukorg</h1>
+        <br>
+        <p>Produkt 1 - 199 kr</p>
+        <p>Produkt 2 - 99 kr</p>
+        <div id="summa">
+        <p><strong>Totalsumma <span style="font-size: x-small;">(inkl. moms) </span></strong></p> 
+        <p><strong> :  kr</strong></p>
+        </div>
+
+        <div id="cartItems"></div>
+          <h3>Total: <span id="totalPrice">0 kr</span></h3>
+
+        <hr>
+
+        <div>
+          <h3 style="text-decoration: underline;">Betalning</h3>
+          <br>
+        
+
+          <h6>address:</h6>
+          <input type="text" id="address">
+
+          <br>
+          <br>
+
+          <h6>Betalnings metod:</h6>
+          <div class="btn" id="paymentButtons">
+            <button type="button" class="btn btn-outline-light m-1 payment-btn">
+              <img class="paymenticons" src="swish.png" alt="">
+            </button>
+            <button type="button" class="btn btn-outline-light m-1 payment-btn">
+              <img class="paymenticons" src="card.png" alt="">
+            </button>
+            <button type="button" class="btn btn-outline-light m-1 payment-btn">
+              <img class="paymenticons" src="apple.png" alt="">
+            </button>
+          </div>
+          
+          
+          
+        </div>
+        
+        <br>
+
+        <button onclick="buy()" class="btn btn-outline-light" >Köp</button>
+        </div>
+      </div>
+
+      <script src="kassa.js"></script>
+      <script type="module" src="../FoodGalleri/javascript/supabase.js"></script>
+      
+    
+</body>
+</html>

@@ -26,8 +26,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({
   secret: 'hemlig-nyckel',
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: false,
 }));
+
 
 // Startsida
 app.get('/', (req, res) => {
@@ -69,7 +70,10 @@ app.post('/login', async (req, res) => {
   req.session.username = user.name;
   req.session.user_id = user.user_id;
 
-  res.redirect('/index');
+  req.session.save(() => {
+    res.redirect('/index');
+  });
+  
 });
 
 // Utloggning
@@ -137,3 +141,25 @@ app.post('/register', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Servern körs på http://localhost:${PORT}`);
 });
+
+// foodgalleri
+
+app.get('/galleri', (req, res) => {
+  if (req.session.loggedIn) {
+    res.render('galleri', { session: req.session });
+  } else {
+    res.redirect('/login');
+  }
+});
+
+//sushi meny
+
+app.get('/menyer/sushi', (req, res) => {
+  if (req.session.loggedIn) {
+    res.render('sushi', { session: req.session })
+  } else {
+    res.redirect('/index');
+  }
+});
+
+

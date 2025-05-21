@@ -1,5 +1,5 @@
 function goToHomepage(){
-  window.location.href = '../../../../public/index/index.html'
+  window.location.href = '../../../index/index.html';  
 }
 
 function goToSushi() {

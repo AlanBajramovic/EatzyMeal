@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger Menu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/FoodGalleri/menus/menu.css">
+    <style>
+      body{
+        background-image: url(newyork.jpg);
+      }
+    </style>
+</head>
+<body>
+
+  <!-- topbar med navigation-->
+
+    <div class="topbar d-flex justify-content-between align-items-center px-3 py-2">
+        <button class="btn btn-light"><img id="shopcartimg" src="/FoodGalleri/images/hamburgerMenu.png" alt=""></button>
+        <img class="logo" onclick="goToHomepage()" src="../../eatzyLogo.png" alt="" style="width: 400px; height: 87px; object-fit: cover;">
+        <button onclick="goToKassa()" class="btn btn-light"><img id="shopcartimg" src="/FoodGalleri/images/shopping-cart.png" alt=""></button>
+      </div>
+
+      <button onclick="goToGalleri()" class="backbtn btn btn-light"><img id="backbtnimg" src="/FoodGalleri/images/back-button.png" alt="Tillbaka knapp"></button>
+
+      <div class="menu">
+
+        <!-- Hamburger menyerna med overlay samt lägg i kundvagnen knappar -->
+
+        <div class="itemLayout d-flex flex-column align-items-center">
+          <img src="cheese.jpg" alt="Cheeseburger " class="img-fluid">
+          <h3>Cheeseburger</h3>
+          <div class="priceAndBtn">
+          <h4 class="borderPris">135.00 kr</h4>
+          <button type="button" class="btn btn-outline-dark"><img class="addToCart" src="/FoodGalleri/images/add-to-cart.png" alt="add to cart"></button>
+          </div>
+        </div>
+        
+        <div class="itemLayout d-flex flex-column align-items-center">
+          <img src="bbqbacon.jpg" alt="Bacon BBQ Burger" class="img-fluid">
+          <h3>Bacon BBQ Burger</h3>
+          <div class="priceAndBtn">
+            <h4 class="borderPris">149.00 kr</h4>
+            <button type="button" class="btn btn-outline-dark"><img class="addToCart" src="/FoodGalleri/images/add-to-cart.png" alt="add to cart"></button>
+            </div>
+        </div>
+
+        <div class="itemLayout d-flex flex-column align-items-center">
+          <img src="veggie.jpg" alt="Veggie Burger" class="img-fluid">
+          <h3>Veggie Burger</h3>
+          <div class="priceAndBtn">
+            <h4 class="borderPris">139.00 kr</h4>
+            <button type="button" class="btn btn-outline-dark"><img class="addToCart" src="/FoodGalleri/images/add-to-cart.png" alt="add to cart"></button>
+            </div>
+        </div>
+
+      </div>
+
+      <h6 id="copyright"  style="color: white;">© EatzyMeal AB</h6>
+    
+      <script src="/FoodGalleri/FoodGScript.js"></script>
+</body>

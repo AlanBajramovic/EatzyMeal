@@ -73,7 +73,7 @@ main .layout-grid .left-grid #text-container, main .layout-grid .left-grid #btn-
   z-index: 1;
 }
 main .layout-grid .left-grid h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: bolder;
 }
 main .layout-grid .left-grid #text-middle {
