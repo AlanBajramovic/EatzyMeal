@@ -52,6 +52,7 @@ header {
             border: none;
             border-radius: 9999rem;
             box-shadow: 0 8px 15px rgba(79, 70, 229, 0.3);
+            cursor: pointer;
             
             // Texten
             font-size: 1.4rem;
@@ -119,6 +120,7 @@ main {
               margin-left: 120px;
               margin-top: 50px;
               animation: bounce 1.5s infinite;
+              cursor: pointer;
 
               // Texten
               font-size: 2rem;

@@ -46,6 +46,7 @@ header .right .btn-login {
   border: none;
   border-radius: 9999rem;
   box-shadow: 0 8px 15px rgba(79, 70, 229, 0.3);
+  cursor: pointer;
   font-size: 1.4rem;
   color: #514F4F;
   font-weight: bold;
@@ -97,6 +98,7 @@ main .layout-grid .left-grid #btn-food button {
   margin-left: 120px;
   margin-top: 50px;
   animation: bounce 1.5s infinite;
+  cursor: pointer;
   font-size: 2rem;
   color: #514F4F;
   font-weight: bold;
