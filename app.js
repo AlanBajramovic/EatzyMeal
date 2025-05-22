@@ -19,6 +19,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static('public'));
 app.use('/login_static', express.static(path.join(__dirname, 'publicLogin')));
 app.use('/register_static', express.static(path.join(__dirname, 'publicRegister')));
+app.use('/index_static', express.static(path.join(__dirname, 'publicIndex')));
 app.use('/public_static', express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 
