@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/FoodGalleri/menus/menu.css">
     <style>
       body{
-        background-image: url(italy.jpg);
+        background-image: url(/FoodGalleri/menus/pizza/italy.jpg);
       }
     </style>
 </head>
@@ -17,18 +17,18 @@
 
     <div class="topbar d-flex justify-content-between align-items-center px-3 py-2">
         <button class="btn btn-light"><img id="shopcartimg" src="/FoodGalleri/images/hamburgerMenu.png" alt=""></button>
-        <img class="logo" onclick="goToHomepage()" src="../../eatzyLogo.png" alt="" style="width: 400px; height: 87px; object-fit: cover;">
-        <button onclick="goToKassa()" class="btn btn-light"><img id="shopcartimg" src="/FoodGalleri/images/shopping-cart.png" alt=""></button>
+        <a href="/index"><img class="logo" src="/FoodGalleri/eatzyLogo.png" alt="" style="width: 400px; height: 87px; object-fit: cover;"></a>
+        <a href="/kassa"><button class="btn btn-light"><img id="shopcartimg" src="/FoodGalleri/images/shopping-cart.png" alt=""></button></a>
       </div>
 
-      <button onclick="goToGalleri()" class="backbtn btn btn-light"><img id="backbtnimg" src="/FoodGalleri/images/back-button.png" alt="Tillbaka knapp"></button>
+      <a href="/galleri"><button class="backbtn btn btn-light"><img id="backbtnimg" src="/FoodGalleri/images/back-button.png" alt="Tillbaka knapp"></button></a>
 
       <div class="menu">
 
         <!-- Pizza menyerna med overlay samt lägg i kundvagnen knappar -->
 
         <div class="itemLayout d-flex flex-column align-items-center">
-          <img src="capricciosa.jpg" alt="capricciosa" class="img-fluid">
+          <img src="/FoodGalleri/menus/pizza/capricciosa.jpg" alt="capricciosa" class="img-fluid">
           <h3>Capricciosa</h3>
           <div class="priceAndBtn">
           <h4 class="borderPris">115.00kr</h4>
@@ -37,7 +37,7 @@
         </div>
         
         <div class="itemLayout d-flex flex-column align-items-center">
-          <img src="kebabpizza.jpg" alt="kebabpizza" class="img-fluid">
+          <img src="/FoodGalleri/menus/pizza/kebabpizza.jpg" alt="kebabpizza" class="img-fluid">
           <h3>Kebabpizza</h3>
           <div class="priceAndBtn">
             <h4 class="borderPris">129.00kr</h4>
@@ -46,7 +46,7 @@
         </div>
 
         <div class="itemLayout d-flex flex-column align-items-center">
-          <img src="pepperoni.jpg" alt="pepperoni" class="img-fluid">
+          <img src="/FoodGalleri/menus/pizza/pepperoni.jpg" alt="pepperoni" class="img-fluid">
           <h3>Pepperoni</h3>
           <div class="priceAndBtn">
             <h4 class="borderPris">119.00kr</h4>

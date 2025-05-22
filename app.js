@@ -155,11 +155,66 @@ app.get('/galleri', (req, res) => {
 
 //sushi meny
 
-app.get('/menyer/sushi', (req, res) => {
+app.get('/sushi', (req, res) => {
   if (req.session.loggedIn) {
-    res.render('sushi', { session: req.session })
+    res.render('menyer/sushi', { session: req.session })
   } else {
-    res.redirect('/index');
+    res.redirect('/login');
+  }
+});
+
+//hamburger meny
+
+app.get('/hamburger', (req, res) => {
+  if (req.session.loggedIn) {
+    res.render('menyer/hamburger', { session: req.session })
+  } else {
+    res.redirect('/login');
+  }
+});
+
+//pizza meny
+app.get('/pizza', (req, res) => {
+  if (req.session.loggedIn) {
+    res.render('menyer/pizza', { session: req.session })
+  } else {
+    res.redirect('/login');
+  }
+});
+
+//noodle meny
+app.get('/noodle', (req, res) => {
+  if (req.session.loggedIn) {
+    res.render('menyer/noodle', { session: req.session })
+  } else {
+    res.redirect('/login');
+  }
+});
+
+//grill meny
+app.get('/grill', (req, res) => {
+  if (req.session.loggedIn) {
+    res.render('menyer/grill', { session: req.session })
+  } else {
+    res.redirect('/login');
+  }
+});
+
+//spagetthi meny
+app.get('/spagetthi', (req, res) => {
+  if (req.session.loggedIn) {
+    res.render('menyer/spagetthi', { session: req.session })
+  } else {
+    res.redirect('/login');
+  }
+});
+
+//kassa
+app.get('/kassa', (req, res) => {
+  if (req.session.loggedIn) {
+    res.render('kassa', { session: req.session })
+  } else {
+    res.redirect('/login');
   }
 });
 

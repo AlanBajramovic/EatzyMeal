@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/FoodGalleri/menus/menu.css">
     <style>
       body{
-        background-image: url(newyork.jpg);
+        background-image: url(/FoodGalleri/menus/hamburger/newyork.jpg);
       }
     </style>
 </head>
@@ -19,18 +19,18 @@
 
     <div class="topbar d-flex justify-content-between align-items-center px-3 py-2">
         <button class="btn btn-light"><img id="shopcartimg" src="/FoodGalleri/images/hamburgerMenu.png" alt=""></button>
-        <img class="logo" onclick="goToHomepage()" src="../../eatzyLogo.png" alt="" style="width: 400px; height: 87px; object-fit: cover;">
-        <button onclick="goToKassa()" class="btn btn-light"><img id="shopcartimg" src="/FoodGalleri/images/shopping-cart.png" alt=""></button>
+        <a href="/index"><img class="logo" src="/FoodGalleri/eatzyLogo.png" alt="" style="width: 400px; height: 87px; object-fit: cover;"></a>
+        <a href="/kassa"><button class="btn btn-light"><img id="shopcartimg" src="/FoodGalleri/images/shopping-cart.png" alt=""></button></a>
       </div>
 
-      <button onclick="goToGalleri()" class="backbtn btn btn-light"><img id="backbtnimg" src="/FoodGalleri/images/back-button.png" alt="Tillbaka knapp"></button>
+      <a href="/galleri"><button class="backbtn btn btn-light"><img id="backbtnimg" src="/FoodGalleri/images/back-button.png" alt="Tillbaka knapp"></button></a>
 
       <div class="menu">
 
         <!-- Hamburger menyerna med overlay samt lägg i kundvagnen knappar -->
 
         <div class="itemLayout d-flex flex-column align-items-center">
-          <img src="cheese.jpg" alt="Cheeseburger " class="img-fluid">
+          <img src="/FoodGalleri/menus/hamburger/cheese.jpg" alt="Cheeseburger " class="img-fluid">
           <h3>Cheeseburger</h3>
           <div class="priceAndBtn">
           <h4 class="borderPris">135.00 kr</h4>
@@ -39,7 +39,7 @@
         </div>
         
         <div class="itemLayout d-flex flex-column align-items-center">
-          <img src="bbqbacon.jpg" alt="Bacon BBQ Burger" class="img-fluid">
+          <img src="/FoodGalleri/menus/hamburger/bbqbacon.jpg" alt="Bacon BBQ Burger" class="img-fluid">
           <h3>Bacon BBQ Burger</h3>
           <div class="priceAndBtn">
             <h4 class="borderPris">149.00 kr</h4>
@@ -48,7 +48,7 @@
         </div>
 
         <div class="itemLayout d-flex flex-column align-items-center">
-          <img src="veggie.jpg" alt="Veggie Burger" class="img-fluid">
+          <img src="/FoodGalleri/menus/hamburger/veggie.jpg" alt="Veggie Burger" class="img-fluid">
           <h3>Veggie Burger</h3>
           <div class="priceAndBtn">
             <h4 class="borderPris">139.00 kr</h4>
