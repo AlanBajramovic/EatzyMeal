@@ -76,6 +76,7 @@ main .register-form button {
   background-color: #95C9BF;
   border: none;
   margin-top: 20px;
+  cursor: pointer;
 }
 main img {
   position: absolute;

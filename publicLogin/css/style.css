@@ -64,6 +64,7 @@ main .login-input form input, main .login-input form button {
 main .login-input form button {
   background-color: #95C9BF;
   border: none;
+  cursor: pointer;
 }
 
 img {
