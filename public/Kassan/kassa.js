@@ -1,12 +1,3 @@
-function goToGalleri(){
-    window.location.href = '../../FoodGalleri/galleri.html'
-}
-
-function goToHomepage(){
-  window.location.href = '../index/index.html'
-}
-
-
   const buttonGroup = document.getElementById('paymentButtons');
   const buttons = buttonGroup.querySelectorAll('.btn');
 
@@ -47,3 +38,4 @@ let selectedPayment = null;
     // Proceed with purchase
     alert("Beställningen har genomförts!");
   }
+

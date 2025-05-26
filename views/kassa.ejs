@@ -12,6 +12,7 @@
 
   <!-- topbar -->
 
+
     <div class="topbar d-flex justify-content-between align-items-center px-3 py-2">
         <button class="btn btn-light"><img id="shopcartimg" src="/FoodGalleri/images/hamburgerMenu.png" alt="hamMenu"></button>
         <a href="/index"><img class="logo"src="/FoodGalleri/eatzyLogo.png" alt="" style="width: 400px; height: 87px; object-fit: cover;"></a>
@@ -22,17 +23,19 @@
       <div id="kassaDiv">
         <div id="Kassaorder">
 
+          <h2>Your Cart</h2>
+          <ul>
+            <% cart.forEach(item => { %>
+              <li><%= item.meals.name %> x <%= item.quantity %> - <%= item.meals.price %> kr</li>
+            <% }) %>
+          </ul>
+
+
         <h1 style="text-decoration: underline;">Din varukorg</h1>
-        <br>
-        <p>Produkt 1 - 199 kr</p>
-        <p>Produkt 2 - 99 kr</p>
-        <div id="summa">
-        <p><strong>Totalsumma <span style="font-size: x-small;">(inkl. moms) </span></strong></p> 
-        <p><strong> :  kr</strong></p>
-        </div>
 
         <div id="cartItems"></div>
-          <h3>Total: <span id="totalPrice">0 kr</span></h3>
+          <h3>Totalsumma <span style="font-size: x-small;">(inkl. moms) </span><span id="totalPrice">
+            <br> : 0 kr</span></h3>
 
         <hr>
 
@@ -71,7 +74,7 @@
       </div>
 
       <script src="/Kassan/kassa.js"></script>
-      <script type="module" src="../FoodGalleri/javascript/supabase.js"></script>
+      <script type="module" src="../FoodGalleri/javascript/Datakassa.js"></script>
 
 
       <h1></h1>

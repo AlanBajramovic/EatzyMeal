@@ -24,10 +24,15 @@ app.use('/public_static', express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Sessionshantering
+
 app.use(session({
   secret: 'hemlig-nyckel',
   resave: false,
   saveUninitialized: false,
+  cookie: {
+    maxAge: 1000 * 60 * 60, // 1 hour
+    httpOnly: true
+  }
 }));
 
 
@@ -143,21 +148,39 @@ app.listen(PORT, () => {
   console.log(`Servern körs på http://localhost:${PORT}`);
 });
 
+//a
+
+function ensureLoggedIn(req, res, next) {
+  if (req.session.loggedIn) {
+    return next();
+  }
+  res.redirect('/login');
+}
+
+app.get('/galleri', ensureLoggedIn, (req, res) => {
+  console.log('Session på /galleri:', req.session);
+  res.render('galleri', { session: req.session });
+});
+
+
 // foodgalleri
 
 app.get('/galleri', (req, res) => {
-  if (req.session.loggedIn) {
-    res.render('galleri', { session: req.session });
-  } else {
-    res.redirect('/login');
+  console.log('Session på /galleri:', req.session);
+  if (!req.session.loggedIn) {
+    return res.redirect('/login');
   }
+  res.render('galleri', { session: req.session });
+  res.render('galleri', { session: { username: user.email } });
+
 });
+
 
 //sushi meny
 
 app.get('/sushi', (req, res) => {
   if (req.session.loggedIn) {
-    res.render('menyer/sushi', { session: req.session })
+    res.render('menyer/sushi', { session: req.session });
   } else {
     res.redirect('/login');
   }
@@ -210,12 +233,12 @@ app.get('/spagetthi', (req, res) => {
 });
 
 //kassa
-app.get('/kassa', (req, res) => {
-  if (req.session.loggedIn) {
-    res.render('kassa', { session: req.session })
-  } else {
-    res.redirect('/login');
+
+app.get('/kassa', async (req, res) => {
+  const userId = req.session.user_id;
+
+  if (!userId) {
+    return res.redirect('/login'); // Redirect if the user is not logged in
   }
 });
-
 
