@@ -13,17 +13,30 @@
                 linear-gradient(135deg, rgba(255, 255, 255, 0.6) 40%, rgba(113, 240, 245, 0.6)),
                 linear-gradient(250deg, rgba(255, 255, 255, 0.6) 40%, rgba(120, 235, 255, 0.8));
         }
+
+        header .header-logo {
+            display: flex;
+            justify-content: center;
+        }
+
+        header .header-logo img {
+            margin-top: 20px;
+            width: 126px;
+            height: 73px;
+        }
+
       </style>
 </head>
 <body>
-
-    <!-- topbar -->
-
-    <div class="topbar d-flex justify-content-between align-items-center px-3 py-2">
-        <button class="btn btn-light"><img id="shopcartimg" src="/foodgalleri/images/hamburgerMenu.png" alt=""></button>
-        <a href="/index"><img class="logo"src="/FoodGalleri/eatzyLogo.png" alt="" style="width: 400px; height: 87px; object-fit: cover;"></a>
-        <a href="/kassa"><button class="btn btn-light"><img id="shopcartimg" src="/foodgalleri/images/shopping-cart.png" alt=""></button></a>
-      </div>
+    
+    <!-- Header med logotype -->
+    <header>
+        <div class="header-logo">
+            <a href="/index">
+                <img src="/register_static/Bilder/logoType.png" alt="EatzyMeal logotyp">
+            </a>
+        </div>
+    </header>
       
     <!-- galleri layout -->
 
