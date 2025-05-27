@@ -15,11 +15,22 @@
   <style>
     body {
       background-image: url(/FoodGalleri/menus/sushi/japan.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    .quantity-input {
+      width: 60px;
+      text-align: center;
+      margin: 0 10px;
+    }
+    .order-button-container {
+      text-align: center;
+      margin-top: 30px;
     }
   </style>
 </head>
 <body>
-
 
   <!-- Topbar -->
   <div class="topbar d-flex justify-content-between align-items-center px-3 py-2">
@@ -49,11 +60,9 @@
     <div class="itemLayout d-flex flex-column align-items-center">
       <img src="/FoodGalleri/menus/sushi/california.jpg" alt="California Roll" class="img-fluid">
       <h3>California Roll</h3>
-      <div class="priceAndBtn">
-        <h4 class="borderPris">95.00kr</h4>
-        <button type="button" class="btn btn-outline-dark addToCartBtn" data-id="16" >
-          <img class="addToCart" src="/FoodGalleri/images/add-to-cart.png" alt="add to cart">
-        </button>
+      <div class="priceAndBtn d-flex align-items-center">
+        <h4 class="borderPris me-3">95.00kr</h4>
+        <input type="number" class="form-control quantity-input" min="0" value="0" data-id="16">
       </div>
     </div>
 
@@ -61,11 +70,9 @@
     <div class="itemLayout d-flex flex-column align-items-center">
       <img src="/FoodGalleri/menus/sushi/spicytuna.jpg" alt="Spicy Tuna Roll" class="img-fluid">
       <h3>Spicy Tuna Roll</h3>
-      <div class="priceAndBtn">
-        <h4 class="borderPris">105.00kr</h4>
-        <button type="button" class="btn btn-outline-dark addToCartBtn" data-id="17">
-          <img class="addToCart" src="/FoodGalleri/images/add-to-cart.png" alt="add to cart">
-        </button>
+      <div class="priceAndBtn d-flex align-items-center">
+        <h4 class="borderPris me-3">105.00kr</h4>
+        <input type="number" class="form-control quantity-input" min="0" value="0" data-id="17">
       </div>
     </div>
 
@@ -73,21 +80,48 @@
     <div class="itemLayout d-flex flex-column align-items-center">
       <img src="/FoodGalleri/menus/sushi/salmon.jpg" alt="Salmon Nigiri" class="img-fluid">
       <h3>Salmon Nigiri</h3>
-      <div class="priceAndBtn">
-        <h4 class="borderPris">99.00kr</h4>
-        <button type="button" class="btn btn-outline-dark addToCartBtn" data-id="18">
-          <img class="addToCart" src="/FoodGalleri/images/add-to-cart.png" alt="add to cart">
-        </button>
+      <div class="priceAndBtn d-flex align-items-center">
+        <h4 class="borderPris me-3">99.00kr</h4>
+        <input type="number" class="form-control quantity-input" min="0" value="0" data-id="18">
       </div>
     </div>
 
   </div>
 
+  <!-- Order Button -->
+  <div class="order-button-container">
+    <button class="btn btn-success btn-lg" onclick="submitSushiOrder()">Place Order</button>
+  </div>
+
   <h6 id="copyright" style="color: white;">© EatzyMeal AB</h6>
 
   <!-- JS Scripts -->
-
   <script src="/FoodGalleri/FoodGScript.js"></script>
-  <script type="module" src="/FoodGalleri/javascript/supabase.js"></script>
+
+  <!-- Import placeOrder and connect button -->
+  <script type="module">
+    import { placeOrder } from "/FoodGalleri/javascript/supabase.js";
+
+    window.submitSushiOrder = function () {
+      const inputs = document.querySelectorAll('.quantity-input');
+      const items = [];
+
+      inputs.forEach(input => {
+        const qty = parseInt(input.value);
+        const mealId = parseInt(input.dataset.id);
+        if (qty > 0) {
+          items.push({ meal_id: mealId, quantity: qty });
+        }
+      });
+
+      if (items.length === 0) {
+        alert('Please select at least one sushi item.');
+        return;
+      }
+
+      placeOrder(items);
+    };
+  </script>
+
 </body>
 </html>

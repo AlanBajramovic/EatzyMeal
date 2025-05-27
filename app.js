@@ -23,6 +23,9 @@ app.use('/index_static', express.static(path.join(__dirname, 'publicIndex')));
 app.use('/public_static', express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(express.json());
+
+
 // Sessionshantering
 
 app.use(session({
@@ -242,3 +245,70 @@ app.get('/kassa', async (req, res) => {
   }
 });
 
+app.post('/api/place-order', async (req, res) => {
+  if (!req.session.loggedIn || !req.session.user_id) {
+    return res.status(401).json({ message: 'You must be logged in.' });
+  }
+
+  const userId = req.session.user_id;
+  const items = req.body.items;
+
+  if (!Array.isArray(items) || items.length === 0) {
+    return res.status(400).json({ message: 'No items provided.' });
+  }
+
+  try {
+    const mealIds = items.map(item => item.meal_id);
+    const { data: meals, error: mealError } = await supabase
+      .from('meals')
+      .select('meal_id, price')
+      .in('meal_id', mealIds);
+
+    if (mealError || !meals) throw mealError;
+
+    const mealPriceMap = {};
+    meals.forEach(meal => {
+      mealPriceMap[meal.meal_id] = parseFloat(meal.price);
+    });
+
+    const totalPrice = items.reduce((total, item) => {
+      return total + (mealPriceMap[item.meal_id] || 0) * item.quantity;
+    }, 0);
+
+    const { data: newOrder, error: orderError } = await supabase
+      .from('orders')
+      .insert([{
+        user_id: userId,
+        order_date: new Date().toISOString(),
+        total_price: totalPrice,
+        status: 'pending'
+      }])
+      .select('order_id')
+      .single();
+
+    if (orderError) throw orderError;
+
+    const orderItems = items.map(item => ({
+      order_id: newOrder.order_id,
+      meal_id: item.meal_id,
+      quantity: item.quantity,
+      user_id: userId
+    }));
+
+    const { error: itemsError } = await supabase
+      .from('order_items')
+      .insert(orderItems);
+
+    if (itemsError) throw itemsError;
+
+    res.status(200).json({ message: 'Order placed successfully!' });
+
+  } catch (err) {
+    console.error('Order error:', err);
+    res.status(500).json({ message: 'Server error placing order.' });
+  }
+});
+
+app.listen(PORT, () => {
+  console.log(`Servern körs på http://localhost:${PORT}`);
+});
