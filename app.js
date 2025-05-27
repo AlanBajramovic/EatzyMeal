@@ -238,10 +238,10 @@ app.get('/spagetthi', (req, res) => {
 //kassa
 
 app.get('/kassa', async (req, res) => {
-  const userId = req.session.user_id;
-
-  if (!userId) {
-    return res.redirect('/login'); // Redirect if the user is not logged in
+  if (req.session.loggedIn) {
+    res.render('kassa', { session: req.session })
+  } else {
+    res.redirect('/login');
   }
 });
 
@@ -307,8 +307,4 @@ app.post('/api/place-order', async (req, res) => {
     console.error('Order error:', err);
     res.status(500).json({ message: 'Server error placing order.' });
   }
-});
-
-app.listen(PORT, () => {
-  console.log(`Servern körs på http://localhost:${PORT}`);
 });

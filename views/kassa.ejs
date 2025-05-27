@@ -23,17 +23,10 @@
       <div id="kassaDiv">
         <div id="Kassaorder">
 
-          <h2>Your Cart</h2>
-          <ul>
-            <% cart.forEach(item => { %>
-              <li><%= item.meals.name %> x <%= item.quantity %> - <%= item.meals.price %> kr</li>
-            <% }) %>
-          </ul>
-
-
         <h1 style="text-decoration: underline;">Din varukorg</h1>
 
-        <div id="cartItems"></div>
+        <div id="cartItems" class="my-3"></div>
+
           <h3>Totalsumma <span style="font-size: x-small;">(inkl. moms) </span><span id="totalPrice">
             <br> : 0 kr</span></h3>
 
@@ -74,7 +67,7 @@
       </div>
 
       <script src="/Kassan/kassa.js"></script>
-      <script type="module" src="../FoodGalleri/javascript/Datakassa.js"></script>
+      <script type="module" src="/FoodGalleri/javascript/Datakassa.js"></script>
 
 
       <h1></h1>

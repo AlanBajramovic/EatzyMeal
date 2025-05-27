@@ -1,65 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noodle Menu</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/FoodGalleri/menus/menu.css">
-    <style>
-      body{
-        background-image: url(/FoodGalleri/menus/noodle/china.jpg);
-      }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noodle Menu</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="/FoodGalleri/menus/menu.css">
+
+  <style>
+    body {
+      background-image: url(/FoodGalleri/menus/noodle/china.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    .quantity-input {
+      width: 60px;
+      text-align: center;
+      margin: 0 10px;
+    }
+    .order-button-container {
+      text-align: center;
+      margin-top: 30px;
+    }
+  </style>
 </head>
 <body>
 
-      <!-- topbar med navigation-->
+  <!-- Topbar -->
+  <div class="topbar d-flex justify-content-between align-items-center px-3 py-2">
+    <button class="btn btn-light"><img id="shopcartimg" src="/FoodGalleri/images/hamburgerMenu.png" alt=""></button>
+    <a href="/index"><img class="logo" src="/FoodGalleri/eatzyLogo.png" alt="" style="width: 400px; height: 87px; object-fit: cover;"></a>
+    <a href="/kassa"><button class="btn btn-light"><img id="shopcartimg" src="/FoodGalleri/images/shopping-cart.png" alt=""></button></a>
+  </div>
 
-    <div class="topbar d-flex justify-content-between align-items-center px-3 py-2">
-        <button class="btn btn-light"><img id="shopcartimg" src="/FoodGalleri/images/hamburgerMenu.png" alt=""></button>
-        <a href="/index"><img class="logo" src="/FoodGalleri/eatzyLogo.png" alt="" style="width: 400px; height: 87px; object-fit: cover;"></a>
-        <a href="/kassa"><button class="btn btn-light"><img id="shopcartimg" src="/FoodGalleri/images/shopping-cart.png" alt=""></button></a>
+  <a href="/galleri"><button class="backbtn btn btn-light"><img id="backbtnimg" src="/FoodGalleri/images/back-button.png" alt="Tillbaka knapp"></button></a>
+
+  <!-- Menu Items -->
+  <div class="menu">
+
+    <!-- Lo Mein -->
+    <div class="itemLayout d-flex flex-column align-items-center">
+      <img src="/FoodGalleri/menus/noodle/lomein.jpg" alt="Lo Mein" class="img-fluid">
+      <h3>Lo Mein</h3>
+      <div class="priceAndBtn d-flex align-items-center">
+        <h4 class="borderPris me-3">129.00 kr</h4>
+        <input type="number" class="form-control quantity-input" min="0" value="0" data-id="1">
       </div>
+    </div>
 
-      <a href="/galleri"><button class="backbtn btn btn-light"><img id="backbtnimg" src="/FoodGalleri/images/back-button.png" alt="Tillbaka knapp"></button></a>
-
-      <div class="menu">
-
-        <!-- Noodle menyerna med overlay samt lägg i kundvagnen knappar -->
-
-        <div class="itemLayout d-flex flex-column align-items-center">
-          <img src="/FoodGalleri/menus/noodle/lomein.jpg" alt="Lo Mein" class="img-fluid">
-          <h3>Lo Mein</h3>
-          <div class="priceAndBtn">
-          <h4 class="borderPris">129.00 kr</h4>
-          <button type="button" class="btn btn-outline-dark"><img class="addToCart" src="/FoodGalleri/images/add-to-cart.png" alt="add to cart"></button>
-          </div>
-        </div>
-        
-        <div class="itemLayout d-flex flex-column align-items-center">
-          <img src="/FoodGalleri/menus/noodle/ramen.jpg" alt="Ramen" class="img-fluid">
-          <h3>Ramen</h3>
-          <div class="priceAndBtn">
-            <h4 class="borderPris">149.00 kr</h4>
-            <button type="button" class="btn btn-outline-dark"><img class="addToCart" src="/FoodGalleri/images/add-to-cart.png" alt="add to cart"></button>
-            </div>
-        </div>
-
-        <div class="itemLayout d-flex flex-column align-items-center">
-          <img src="/FoodGalleri/menus/noodle/pad-thai.jpg" alt="Pad Thai" class="img-fluid">
-          <h3>Pad Thai</h3>
-          <div class="priceAndBtn">
-            <h4 class="borderPris">135.00 kr</h4>
-            <button type="button" class="btn btn-outline-dark"><img class="addToCart" src="/FoodGalleri/images/add-to-cart.png" alt="add to cart"></button>
-            </div>
-        </div>
-
+    <!-- Ramen -->
+    <div class="itemLayout d-flex flex-column align-items-center">
+      <img src="/FoodGalleri/menus/noodle/ramen.jpg" alt="Ramen" class="img-fluid">
+      <h3>Ramen</h3>
+      <div class="priceAndBtn d-flex align-items-center">
+        <h4 class="borderPris me-3">149.00 kr</h4>
+        <input type="number" class="form-control quantity-input" min="0" value="0" data-id="2">
       </div>
+    </div>
 
-      <h6 id="copyright">© EatzyMeal AB</h6>
-    
-      <script src="/FoodGalleri/FoodGScript.js"></script>
-      <script type="module" src="../FoodGalleri/javascript/supabase.js"></script>
+    <!-- Pad Thai -->
+    <div class="itemLayout d-flex flex-column align-items-center">
+      <img src="/FoodGalleri/menus/noodle/pad-thai.jpg" alt="Pad Thai" class="img-fluid">
+      <h3>Pad Thai</h3>
+      <div class="priceAndBtn d-flex align-items-center">
+        <h4 class="borderPris me-3">135.00 kr</h4>
+        <input type="number" class="form-control quantity-input" min="0" value="0" data-id="3">
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Place Order Button -->
+  <div class="order-button-container">
+    <button class="btn btn-success btn-lg" onclick="submitNoodleOrder()">Place Order</button>
+  </div>
+
+  <h6 id="copyright">© EatzyMeal AB</h6>
+
+  <!-- Scripts -->
+  <script src="/FoodGalleri/FoodGScript.js"></script>
+
+  <script type="module">
+    import { placeOrder } from "/FoodGalleri/javascript/supabase.js";
+
+    window.submitNoodleOrder = function () {
+      const inputs = document.querySelectorAll('.quantity-input');
+      const items = [];
+
+      inputs.forEach(input => {
+        const qty = parseInt(input.value);
+        const mealId = parseInt(input.dataset.id);
+        if (qty > 0) {
+          items.push({ meal_id: mealId, quantity: qty });
+        }
+      });
+
+      if (items.length === 0) {
+        alert('Please select at least one noodle item.');
+        return;
+      }
+
+      placeOrder(items);
+    };
+  </script>
+
 </body>
+</html>
