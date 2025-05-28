@@ -1,77 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kassa</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/Kassan/kassa.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kassa</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/Kassan/kassa.css" />
 </head>
 <body>
 
-  <!-- topbar -->
+  <div class="topbar d-flex justify-content-between align-items-center px-3 py-2">
+    <button class="btn btn-light"><img id="shopcartimg" src="/FoodGalleri/images/hamburgerMenu.png" alt="hamMenu" /></button>
+    <a href="/index"><img class="logo" src="/FoodGalleri/eatzyLogo.png" alt="Eatzy Logo" style="width: 400px; height: 87px; object-fit: cover;" /></a>
+    <a href="/galleri"><button class="btn btn-light"><img id="shopcartimg" src="/Kassan/cutlery.png" width="50" height="50" alt="Add food" /></button></a>
+  </div>
 
+  <div id="kassaDiv">
+    <div id="Kassaorder">
+      <h1 style="text-decoration: underline;">Din varukorg</h1>
+      <div id="cartItems" class="mb-3"></div>
+      <h3>Totalsumma <span style="font-size: x-small;">(inkl. moms)</span> <span id="totalPrice"><br>: 0 kr</span></h3>
 
-    <div class="topbar d-flex justify-content-between align-items-center px-3 py-2">
-        <button class="btn btn-light"><img id="shopcartimg" src="/FoodGalleri/images/hamburgerMenu.png" alt="hamMenu"></button>
-        <a href="/index"><img class="logo"src="/FoodGalleri/eatzyLogo.png" alt="" style="width: 400px; height: 87px; object-fit: cover;"></a>
-        <a href="/galleri"><button class="btn btn-light"><img id="shopcartimg" src="/Kassan/cutlery.png" width="50px" height="50px" alt="Add food"></button></a>
-      </div>
+      <hr />
 
-      <!-- kassans layout -->
-      <div id="kassaDiv">
-        <div id="Kassaorder">
+      <div>
+        <h3 style="text-decoration: underline;">Betalning</h3>
+        <br />
+        <h6>Adress:</h6>
+        <input type="text" id="address" class="form-control" />
 
-        <h1 style="text-decoration: underline;">Din varukorg</h1>
-
-        <div id="cartItems" class="mb-3"></div>
-
-          <h3>Totalsumma <span style="font-size: x-small;">(inkl. moms) </span><span id="totalPrice">
-            <br> : 0 kr</span></h3>
-
-        <hr>
-
-        <div>
-          <h3 style="text-decoration: underline;">Betalning</h3>
-          <br>
-        
-
-          <h6>address:</h6>
-          <input type="text" id="address">
-
-          <br>
-          <br>
-
-          <h6>Betalnings metod:</h6>
-          <div class="btn" id="paymentButtons">
-            <button type="button" class="btn btn-outline-light m-1 payment-btn">
-              <img class="paymenticons" src="/Kassan/swish.png" alt="">
-            </button>
-            <button type="button" class="btn btn-outline-light m-1 payment-btn">
-              <img class="paymenticons" src="/Kassan/card.png" alt="">
-            </button>
-            <button type="button" class="btn btn-outline-light m-1 payment-btn">
-              <img class="paymenticons" src="/Kassan/apple.png" alt="">
-            </button>
-          </div>
-          
-          
-          
+        <br />
+        <h6>Betalningsmetod:</h6>
+        <div class="btn" id="paymentButtons">
+          <button type="button" class="btn btn-outline-light m-1 payment-btn">
+            <img class="paymenticons" src="/Kassan/swish.png" alt="Swish" />
+          </button>
+          <button type="button" class="btn btn-outline-light m-1 payment-btn">
+            <img class="paymenticons" src="/Kassan/card.png" alt="Card" />
+          </button>
+          <button type="button" class="btn btn-outline-light m-1 payment-btn">
+            <img class="paymenticons" src="/Kassan/apple.png" alt="Apple Pay" />
+          </button>
         </div>
-        
-        <br>
 
-        <button onclick="buy()" class="btn btn-outline-light" >Köp</button>
-        </div>
+        <br />
+
+        <button onclick="buy()" class="btn btn-outline-light">Köp</button>
       </div>
-
-      <script src="/Kassan/kassa.js"></script>
-      <script type="module" src="/FoodGalleri/javascript/Datakassa.js"></script>
-
-
-      <h1></h1>
-      
-    
+    </div>
+  </div>
+  
+  <script>
+    window.currentUserId = <%- JSON.stringify(user_id) %>;
+  </script>
+  
+  
+  <script type="module" src="/FoodGalleri/javascript/Datakassa.js"></script>
+  <script src="/Kassan/kassa.js"></script>
 </body>
 </html>

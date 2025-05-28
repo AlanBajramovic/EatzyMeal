@@ -237,13 +237,19 @@ app.get('/spagetthi', (req, res) => {
 
 //kassa
 
-app.get('/kassa', async (req, res) => {
-  if (req.session.loggedIn) {
-    res.render('kassa', { session: req.session })
+app.get('/kassa', (req, res) => { 
+
+  console.log('Session user_id:', req.session.user_id);
+
+  if (req.session.loggedIn && req.session.user_id) {
+    res.render('kassa', { user_id: req.session.user_id });
   } else {
     res.redirect('/login');
   }
 });
+
+
+
 
 app.post('/api/place-order', async (req, res) => {
   if (!req.session.loggedIn || !req.session.user_id) {
